@@ -1,0 +1,10 @@
+@import '../../styles/global.scss';
+
+.info-display {
+  height: 30vh;
+  color: white;
+  background-color: $card-default-dark;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px $main-accent;
+}

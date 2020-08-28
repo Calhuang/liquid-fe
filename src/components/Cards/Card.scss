@@ -1,0 +1,94 @@
+@import '../../styles/global.scss';
+
+.card-wrapper {
+  color: white;
+  background-color: $card-default-dark;
+  border-radius: 10px;
+  height: 70px;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+  transition: all 0.6s ease !important;
+  overflow: hidden;
+  grid-template-areas: 
+      "left middle right";
+  
+  &.expanded {
+    height: 300px;
+    grid-template-rows: 70px auto;
+    grid-template-areas: 
+      "left middle right"
+      "main main main";
+    
+    @include card-gradient;
+  }
+
+  @include shadow-1;
+}
+
+.ind {
+  height: 60px;
+  border-radius: 10px;
+  padding: 2px 2px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 10px;
+
+  &.expanded {
+    height: 290px;
+  }
+
+  &.active {
+    background-color: $green;
+  }
+
+  &.inactive {
+    background-color: $red;
+  }
+}
+
+.left {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  grid-area: left;
+}
+
+.right {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  grid-area: right;
+}
+
+.ticker-header {
+  font-size: 1.5rem;
+}
+
+.rate {
+  grid-area: middle;
+  font-size: 0.8rem;
+  color: $main-accent;
+  border-radius: 10px;
+  height: 20px;
+}
+
+.expanded-main {
+  grid-area: main;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.info-title {
+  color: $second-accent;
+  font-weight: bold !important;
+}
+
+.details-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+  grid-gap: 10px;
+}
